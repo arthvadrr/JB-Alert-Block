@@ -25,3 +25,7 @@ node_modules/
 
 # dotenv environment variables file
 .env
+.idea/php.xml
+.idea/jb-alert-block.iml
+.idea/vcs.xml
+.idea/jb-alert-block.iml

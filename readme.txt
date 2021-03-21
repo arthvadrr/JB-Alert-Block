@@ -1,5 +1,5 @@
 === Jb Alert Block ===
-Contributors:      The WordPress Contributors
+Contributors:      JavaBryan
 Tags:              block
 Requires at least: 5.6.0
 Tested up to:      5.7.0
@@ -12,10 +12,7 @@ Example block written with ESNext standard and JSX support – build step requir
 
 == Description ==
 
-This is the long description. No limit, and you can use Markdown (as well as in the following sections).
-
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+Awesome alert block meant for use with any WordPress theme.
 
 == Installation ==
 
@@ -29,13 +26,9 @@ e.g.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+Are you a real developer?
 
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
+...maybe...
 
 == Screenshots ==
 
@@ -48,10 +41,5 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 == Changelog ==
 
 = 0.1.0 =
+Houston, we have a repo.
 * Release
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.
