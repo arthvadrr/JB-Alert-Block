@@ -1,5 +1,17 @@
 .wp-block-create-block-jb-alert-block {
   border: 1px solid #f00; }
 
+.alert-types {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .alert-types button {
+    width: calc(50% - 1rem);
+    border: none;
+    margin: 0 0.5rem 0.5rem 0;
+    margin-left: 0 !important; }
+    .alert-types button.btn-active {
+      background-color: orange; }
+
 
 /*# sourceMappingURL=index.css.map*/
