@@ -27,17 +27,36 @@ const Inspector = (
 		setAttributes,
 	} ) => {
 
+	      const alertTypes = [
+		      'default',
+		      'info',
+		      'warning',
+		      'success',
+		      'danger'
+	      ];
+
 	      return (
 		      <InspectorControls>
-			      <PanelBody title={__( 'Settings' )}>
+			      <PanelBody title={__( 'Alert Type' )}>
 				      <PanelRow>
 					      <ButtonGroup className="alert-types">
-						      <Button icon="warning" className={alertType === 'info' ? 'btn-active' : ''} onClick={() => setAlertType( 'info' )}>Info</Button>
-						      <Button icon="warning" className={alertType === 'warning' ? 'btn-active' : ''} onClick={() => setAlertType( 'warning' )}>Warning</Button>
-						      <Button icon="warning" className={alertType === 'success' ? 'btn-active' : ''} onClick={() => setAlertType( 'success' )}>Success</Button>
-						      <Button icon="warning" className={alertType === 'danger' ? 'btn-active' : ''} onClick={() => setAlertType( 'danger' )}>Danger</Button>
+						      {alertTypes.map( ( alert, i ) => {
+							      return (
+								      <Button
+									      key={i}
+									      icon="warning"
+									      className={alertType === alert ? `btn-active alert-${alertType}` : ''}
+									      onClick={() => setAlertType( alert )}
+								      >
+									      {alert.charAt( 0 ).toUpperCase() + alert.slice( 1 )}
+								      </Button>
+							      );
+						      } )
+						      }
 					      </ButtonGroup>
 				      </PanelRow>
+			      </PanelBody>
+			      <PanelBody title={__( 'Settings' )}>
 				      <PanelRow>
 					      <ToggleControl
 						      label="Title"
@@ -58,7 +77,6 @@ const Inspector = (
 						      />
 					      </PanelRow>
 					      <ButtonGroup>
-						      <div>Heading Level</div>
 						      <Button isPrimary={headingLevel === 2} onClick={() => setHeadingLevel( 2 )}>H2</Button>
 						      <Button isPrimary={headingLevel === 3} onClick={() => setHeadingLevel( 3 )}>H3</Button>
 						      <Button isPrimary={headingLevel === 4} onClick={() => setHeadingLevel( 4 )}>H4</Button>
@@ -67,18 +85,6 @@ const Inspector = (
 					      </ButtonGroup>
 				      </>
 				      }
-				      <PanelRow>
-					      <SelectControl
-						      label="Text Alignment"
-						      value={textAlignment}
-						      options={[
-							      { label : 'Left', value : 'left' },
-							      { label : 'Center', value : 'center' },
-							      { label : 'Right', value : 'right' },
-						      ]}
-						      onChange={( align ) => setTextAlignment( align )}
-					      />
-				      </PanelRow>
 			      </PanelBody>
 		      </InspectorControls>
 	      );

@@ -1,5 +1,5 @@
-.wp-block-create-block-jb-alert-block {
-  border: 1px solid #f00; }
+.panel-label {
+  padding: 0.5rem 0; }
 
 .alert-types {
   display: flex;
@@ -10,8 +10,49 @@
     border: none;
     margin: 0 0.5rem 0.5rem 0;
     margin-left: 0 !important; }
-    .alert-types button.btn-active {
-      background-color: orange; }
+
+.wp-block-create-block-jb-alert-block {
+  margin: 0;
+  padding: 0; }
+  .wp-block-create-block-jb-alert-block .jb-block a {
+    color: #000; }
+    .wp-block-create-block-jb-alert-block .jb-block a.btn-dark {
+      color: #fff; }
+
+.alert-default {
+  background-color: #F4F4F4;
+  color: #525252; }
+  .alert-default.alert-dark {
+    color: #F4F4F4;
+    background-color: #525252; }
+
+.alert-info {
+  background-color: #BAE2F7;
+  color: #1F475C; }
+  .alert-info.alert-dark {
+    color: #BAE2F7;
+    background-color: #1F475C; }
+
+.alert-warning {
+  background-color: #F7E6BA;
+  color: #5A491D; }
+  .alert-warning.alert-dark {
+    color: #F7E6BA;
+    background-color: #5A491D; }
+
+.alert-success {
+  background-color: #B4FFC2;
+  color: #115C1F; }
+  .alert-success.alert-dark {
+    color: #B4FFC2;
+    background-color: #115C1F; }
+
+.alert-danger {
+  background-color: #FF9898;
+  color: #5C0000; }
+  .alert-danger.alert-dark {
+    color: #FF9898;
+    background-color: #5C0000; }
 
 
 /*# sourceMappingURL=index.css.map*/

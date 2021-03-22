@@ -1,5 +1,7 @@
-.wp-block-create-block-jb-alert-block {
-	border : 1px solid #f00;
+@import './style/variables';
+
+.panel-label {
+	padding : 0.5rem 0;
 }
 
 .alert-types {
@@ -8,13 +10,74 @@
 	flex-wrap      : wrap;
 
 	button {
-		width   : calc(50% - 1rem);
-		border  : none;
-		margin  : 0 0.5rem 0.5rem 0;
-		margin-left: 0 !important;
+		width       : calc(50% - 1rem);
+		border      : none;
+		margin      : 0 0.5rem 0.5rem 0;
+		margin-left : 0 !important;
+	}
+}
 
-		&.btn-active {
-			background-color : orange;
+.wp-block-create-block-jb-alert-block {
+	margin  : 0;
+	padding : 0;
+
+	.jb-block {
+		a {
+			color : #000;
+
+			&.btn-dark {
+				color : #fff;
+			}
 		}
+	}
+}
+
+.alert-default {
+	background-color : $color--alert-default-light;
+	color            : $color--alert-default-dark;
+
+	&.alert-dark {
+		color            : $color--alert-default-light;
+		background-color : $color--alert-default-dark;
+	}
+}
+
+.alert-info {
+	background-color : $color--alert-info-light;
+	color            : $color--alert-info-dark;
+
+	&.alert-dark {
+		color            : $color--alert-info-light;
+		background-color : $color--alert-info-dark;
+	}
+}
+
+.alert-warning {
+	background-color : $color--alert-warning-light;
+	color            : $color--alert-warning-dark;
+
+	&.alert-dark {
+		color            : $color--alert-warning-light;
+		background-color : $color--alert-warning-dark;
+	}
+}
+
+.alert-success {
+	background-color : $color--alert-success-light;
+	color            : $color--alert-success-dark;
+
+	&.alert-dark {
+		color            : $color--alert-success-light;
+		background-color : $color--alert-success-dark;
+	}
+}
+
+.alert-danger {
+	background-color : $color--alert-danger-light;
+	color            : $color--alert-danger-dark;
+
+	&.alert-dark {
+		color            : $color--alert-danger-light;
+		background-color : $color--alert-danger-dark;
 	}
 }

@@ -11,31 +11,33 @@ export default function Edit () {
 	const [ hasTitle, setHasTitle ] = useState( true );
 	const [ title, setTitle ] = useState( '' );
 	const [ headingLevel, setHeadingLevel ] = useState( 2 );
-	const [ alertType, setAlertType ] = useState( 'info' );
+	const [ alertType, setAlertType ] = useState( 'default' );
 
 	let HeadingTag = `h${headingLevel}`;
 
 	return (
-		<div className="jb-alert" {...useBlockProps()}>
-			<Inspector
-				title={title}
-				setTitle={setTitle}
-				hasTitle={hasTitle}
-				setHasTitle={setHasTitle}
-				headingLevel={headingLevel}
-				setHeadingLevel={setHeadingLevel}
-				textAlignment={textAlignment}
-				setTextAlignment={setTextAlignment}
-				alertType={alertType}
-				setAlertType={setAlertType}
-			/>
-			{hasTitle &&
-			<HeadingTag>{title === '' ? 'Enter an alert title...' : title}</HeadingTag>
-			}
-			<InnerBlocks
-				template={INNER_BLOCKS_TEMPLATE}
-				templateLock="all"
-			/>
+		<div {...useBlockProps()}>
+			<div className={`jb-alert alert-${alertType}`}>
+				<Inspector
+					title={title}
+					setTitle={setTitle}
+					hasTitle={hasTitle}
+					setHasTitle={setHasTitle}
+					headingLevel={headingLevel}
+					setHeadingLevel={setHeadingLevel}
+					textAlignment={textAlignment}
+					setTextAlignment={setTextAlignment}
+					alertType={alertType}
+					setAlertType={setAlertType}
+				/>
+				{hasTitle &&
+				<HeadingTag>{title === '' ? 'Enter an alert title...' : title}</HeadingTag>
+				}
+				<InnerBlocks
+					template={INNER_BLOCKS_TEMPLATE}
+					templateLock="all"
+				/>
+			</div>
 		</div>
 	);
 }
