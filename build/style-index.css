@@ -1,3 +1,43 @@
+.alert-default {
+  background-color: ("default-light": #F4F4F4, "default-dark": #525252, "default-border-light": #cecece, "default-border-dark": #787878), 1;
+  color: ("default-light": #F4F4F4, "default-dark": #525252, "default-border-light": #cecece, "default-border-dark": #787878), 1;
+  border: 1px solid ("default-light": #F4F4F4, "default-dark": #525252, "default-border-light": #cecece, "default-border-dark": #787878), 2; }
+  .alert-default.alert-dark {
+    background-color: ("default-light": #F4F4F4, "default-dark": #525252, "default-border-light": #cecece, "default-border-dark": #787878), 1;
+    color: ("default-light": #F4F4F4, "default-dark": #525252, "default-border-light": #cecece, "default-border-dark": #787878), 0; }
+
+.alert-info {
+  background-color: ("info-light": #BAE2F7, "info-dark": #1F475C, "info-border-light": #75c5ef, "info-border-dark": #327395), 1;
+  color: ("info-light": #BAE2F7, "info-dark": #1F475C, "info-border-light": #75c5ef, "info-border-dark": #327395), 1;
+  border: 1px solid ("info-light": #BAE2F7, "info-dark": #1F475C, "info-border-light": #75c5ef, "info-border-dark": #327395), 2; }
+  .alert-info.alert-dark {
+    background-color: ("info-light": #BAE2F7, "info-dark": #1F475C, "info-border-light": #75c5ef, "info-border-dark": #327395), 1;
+    color: ("info-light": #BAE2F7, "info-dark": #1F475C, "info-border-light": #75c5ef, "info-border-dark": #327395), 0; }
+
+.alert-warning {
+  background-color: ("warning-light": #F7E6BA, "warning-dark": #5A491D, "warning-border-light": #efcd75, "warning-border-dark": #947830), 1;
+  color: ("warning-light": #F7E6BA, "warning-dark": #5A491D, "warning-border-light": #efcd75, "warning-border-dark": #947830), 1;
+  border: 1px solid ("warning-light": #F7E6BA, "warning-dark": #5A491D, "warning-border-light": #efcd75, "warning-border-dark": #947830), 2; }
+  .alert-warning.alert-dark {
+    background-color: ("warning-light": #F7E6BA, "warning-dark": #5A491D, "warning-border-light": #efcd75, "warning-border-dark": #947830), 1;
+    color: ("warning-light": #F7E6BA, "warning-dark": #5A491D, "warning-border-light": #efcd75, "warning-border-dark": #947830), 0; }
+
+.alert-success {
+  background-color: ("success-light": #B4FFC2, "success-dark": #115C1F, "success-border-light": #68ff84, "success-border-dark": #1d9d35), 1;
+  color: ("success-light": #B4FFC2, "success-dark": #115C1F, "success-border-light": #68ff84, "success-border-dark": #1d9d35), 1;
+  border: 1px solid ("success-light": #B4FFC2, "success-dark": #115C1F, "success-border-light": #68ff84, "success-border-dark": #1d9d35), 2; }
+  .alert-success.alert-dark {
+    background-color: ("success-light": #B4FFC2, "success-dark": #115C1F, "success-border-light": #68ff84, "success-border-dark": #1d9d35), 1;
+    color: ("success-light": #B4FFC2, "success-dark": #115C1F, "success-border-light": #68ff84, "success-border-dark": #1d9d35), 0; }
+
+.alert-danger {
+  background-color: ("danger-light": #FF9898, "danger-dark": #5C0000, "danger-border-light": #ff4c4c, "danger-border-dark": #a90000), 1;
+  color: ("danger-light": #FF9898, "danger-dark": #5C0000, "danger-border-light": #ff4c4c, "danger-border-dark": #a90000), 1;
+  border: 1px solid ("danger-light": #FF9898, "danger-dark": #5C0000, "danger-border-light": #ff4c4c, "danger-border-dark": #a90000), 2; }
+  .alert-danger.alert-dark {
+    background-color: ("danger-light": #FF9898, "danger-dark": #5C0000, "danger-border-light": #ff4c4c, "danger-border-dark": #a90000), 1;
+    color: ("danger-light": #FF9898, "danger-dark": #5C0000, "danger-border-light": #ff4c4c, "danger-border-dark": #a90000), 0; }
+
 .wp-block-create-block-jb-alert-block {
   background-color: #21759b;
   color: #fff;

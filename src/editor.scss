@@ -11,17 +11,46 @@
 
 	button {
 		width       : calc(50% - 1rem);
-		border      : none;
 		margin      : 0 0.5rem 0.5rem 0;
 		margin-left : 0 !important;
+		border      : 1px solid #888;
+		box-shadow  : none !important;
+
+		&.btn-active {
+			border     : 1px solid orange;
+			box-shadow : 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+		}
+
+		&:hover,
+		&:focus {
+			box-shadow : 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+		}
 	}
 }
 
 .wp-block-create-block-jb-alert-block {
-	margin  : 0;
 	padding : 0;
 
 	.jb-block {
+		display        : flex !important;
+		align-items    : center;
+		flex-direction : row;
+		padding        : 0.4rem;
+
+		h2, h3, h4, h5, h6, strong {
+			font-size: 1.4rem;
+			line-height: 1.4rem;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.jb-alert-icon {
+			padding-left: 0.8rem;
+			padding-right: 1.2rem;
+			height: 32px;
+			fill: currentColor;
+		}
+
 		a {
 			color : #000;
 
@@ -29,55 +58,98 @@
 				color : #fff;
 			}
 		}
+
+		p {
+			margin-top    : 0;
+			margin-bottom : 0;
+		}
+	}
+}
+
+.alert-icon-select {
+	display   : flex;
+	flex-wrap : wrap;
+
+	.btn-alert-icon {
+		width       : calc(25% - 0.2rem);
+		margin      : 0.2rem;
+		margin-left : 0 !important;
+		box-shadow  : none;
+		border      : 1px solid #000;
+
+		.jb-icon {
+			display      : inline-block;
+			stroke-width : 0;
+			stroke       : currentColor;
+			fill         : currentColor;
+			height       : 1.4rem;
+			width        : 100%;
+		}
+
+		&.btn-active {
+			color      : orange;
+			border     : 1px solid orange;
+			box-shadow : 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+		}
 	}
 }
 
 .alert-default {
-	background-color : $color--alert-default-light;
 	color            : $color--alert-default-dark;
+	background-color : $color--alert-default-light;
+	border           : 1px solid darken($color--alert-default-light, 25%);
 
 	&.alert-dark {
 		color            : $color--alert-default-light;
 		background-color : $color--alert-default-dark;
+		border           : 1px solid darken($color--alert-default-dark, 25%);
 	}
 }
 
 .alert-info {
-	background-color : $color--alert-info-light;
 	color            : $color--alert-info-dark;
+	background-color : $color--alert-info-light;
+	border           : 1px solid darken($color--alert-info-light, 25%);
 
 	&.alert-dark {
 		color            : $color--alert-info-light;
 		background-color : $color--alert-info-dark;
+		border           : 1px solid darken($color--alert-info-light, 25%);
 	}
 }
 
 .alert-warning {
-	background-color : $color--alert-warning-light;
 	color            : $color--alert-warning-dark;
+	background-color : $color--alert-warning-light;
+	border           : 1px solid darken($color--alert-warning-light, 25%);
 
 	&.alert-dark {
 		color            : $color--alert-warning-light;
 		background-color : $color--alert-warning-dark;
+		border           : 1px solid darken($color--alert-warning-dark, 25%);
 	}
 }
 
 .alert-success {
-	background-color : $color--alert-success-light;
 	color            : $color--alert-success-dark;
+	background-color : $color--alert-success-light;
+	border           : 1px solid darken($color--alert-success-light, 25%);
 
 	&.alert-dark {
 		color            : $color--alert-success-light;
 		background-color : $color--alert-success-dark;
+		border           : 1px solid darken($color--alert-success-dark, 25%);
 	}
 }
 
 .alert-danger {
-	background-color : $color--alert-danger-light;
 	color            : $color--alert-danger-dark;
+	background-color : $color--alert-danger-light;
+	border           : 1px solid darken($color--alert-danger-light, 25%);
 
 	&.alert-dark {
 		color            : $color--alert-danger-light;
 		background-color : $color--alert-danger-dark;
+		border           : 1px solid darken($color--alert-danger-dark, 25%);
 	}
 }

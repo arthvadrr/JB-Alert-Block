@@ -1,0 +1,47 @@
+@import './variables';
+
+$colors : (
+	"default": (
+		"default-light": $color--alert-default-light,
+		"default-dark": $color--alert-default-dark,
+		"default-border-light": darken($color--alert-default-light, 15%),
+		"default-border-dark": lighten($color--alert-default-dark, 15%),
+	),
+	"info": (
+		"info-light": $color--alert-info-light,
+		"info-dark": $color--alert-info-dark,
+		"info-border-light": darken($color--alert-info-light, 15%),
+		"info-border-dark": lighten($color--alert-info-dark, 15%),
+	),
+	"warning": (
+		"warning-light": $color--alert-warning-light,
+		"warning-dark": $color--alert-warning-dark,
+		"warning-border-light": darken($color--alert-warning-light, 15%),
+		"warning-border-dark": lighten($color--alert-warning-dark, 15%),
+	),
+	"success": (
+		"success-light": $color--alert-success-light,
+		"success-dark": $color--alert-success-dark,
+		"success-border-light": darken($color--alert-success-light, 15%),
+		"success-border-dark": lighten($color--alert-success-dark, 15%),
+	),
+	"danger": (
+		"danger-light": $color--alert-danger-light,
+		"danger-dark": $color--alert-danger-dark,
+		"danger-border-light": darken($color--alert-danger-light, 15%),
+		"danger-border-dark": lighten($color--alert-danger-dark, 15%),
+	)
+);
+
+@each $type, $color in $colors {
+	.alert-#{$type} {
+		background-color: #{$color, 1};
+		color: #{$color, 1};
+		border: 1px solid #{$color, 2};
+
+		&.alert-dark {
+			background-color: #{$color, 1};
+			color: #{$color, 0};
+		}
+	}
+}
