@@ -105,6 +105,8 @@ const Inspector = (
 						      <Button isPrimary={headingTag === 'h5'} onClick={() => setHeadingTag( 'h5' )}>H5</Button>
 						      <Button isPrimary={headingTag === 'h6'} onClick={() => setHeadingTag( 'h6' )}>H6</Button>
 						      <Button isPrimary={headingTag === 'strong'} onClick={() => setHeadingTag( 'strong' )}>Strong</Button>
+						      <Button isPrimary={headingTag === 'p'} onClick={() => setHeadingTag( 'p' )}>p</Button>
+						      <Button isPrimary={headingTag === 'i'} onClick={() => setHeadingTag( 'i' )}>i</Button>
 					      </ButtonGroup>
 				      </>
 				      }

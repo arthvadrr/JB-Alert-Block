@@ -343,45 +343,40 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Edit() {
-  var _useState = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
+  var _useState = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])(true),
       _useState2 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
-      textAlignment = _useState2[0],
-      setTextAlignment = _useState2[1];
+      hasTitle = _useState2[0],
+      setHasTitle = _useState2[1];
 
-  var _useState3 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])(true),
+  var _useState3 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
       _useState4 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState3, 2),
-      hasTitle = _useState4[0],
-      setHasTitle = _useState4[1];
+      title = _useState4[0],
+      setTitle = _useState4[1];
 
-  var _useState5 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+  var _useState5 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])('strong'),
       _useState6 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState5, 2),
-      title = _useState6[0],
-      setTitle = _useState6[1];
+      headingTag = _useState6[0],
+      setHeadingTag = _useState6[1];
 
-  var _useState7 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])('strong'),
+  var _useState7 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])('default'),
       _useState8 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState7, 2),
-      headingTag = _useState8[0],
-      setHeadingTag = _useState8[1];
+      alertType = _useState8[0],
+      setAlertType = _useState8[1];
 
-  var _useState9 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])('default'),
+  var _useState9 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
       _useState10 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState9, 2),
-      alertType = _useState10[0],
-      setAlertType = _useState10[1];
+      invertColors = _useState10[0],
+      setInvertColors = _useState10[1];
 
-  var _useState11 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+  var _useState11 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])(true),
       _useState12 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState11, 2),
-      invertColors = _useState12[0],
-      setInvertColors = _useState12[1];
+      hasIcon = _useState12[0],
+      setHasIcon = _useState12[1];
 
-  var _useState13 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])(true),
+  var _useState13 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])('bullhorn'),
       _useState14 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState13, 2),
-      hasIcon = _useState14[0],
-      setHasIcon = _useState14[1];
-
-  var _useState15 = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["useState"])('bullhorn'),
-      _useState16 = _babel_runtime_helpers_slicedToArray__WEBPACK_IMPORTED_MODULE_0___default()(_useState15, 2),
-      currentIcon = _useState16[0],
-      setCurrentIcon = _useState16[1];
+      currentIcon = _useState14[0],
+      setCurrentIcon = _useState14[1];
 
   var setJBAlertClassList = function setJBAlertClassList() {
     var classArr = ['jb-block', "alert-".concat(alertType)];
@@ -396,23 +391,21 @@ function Edit() {
   var HeadingTag = headingTag;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
     className: setJBAlertClassList()
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_inspector__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    title: title,
-    setTitle: setTitle,
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_inspector__WEBPACK_IMPORTED_MODULE_3__["default"] //title={title}
+  //setTitle={setTitle}
+  , {
     hasTitle: hasTitle,
-    setHasTitle: setHasTitle,
-    headingTag: headingTag,
-    setHeadingTag: setHeadingTag,
-    textAlignment: textAlignment,
-    setTextAlignment: setTextAlignment,
-    alertType: alertType,
-    setAlertType: setAlertType,
+    setHasTitle: setHasTitle //headingTag={headingTag}
+    //setHeadingTag={setHeadingTag}
+    //alertType={alertType}
+    //setAlertType={setAlertType}
+    ,
     invertColors: invertColors,
     setInvertColors: setInvertColors,
     hasIcon: hasIcon,
-    setHasIcon: setHasIcon,
-    currentIcon: currentIcon,
-    setCurrentIcon: setCurrentIcon
+    setHasIcon: setHasIcon //currentIcon={currentIcon}
+    //setCurrentIcon={setCurrentIcon}
+
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])(_icons__WEBPACK_IMPORTED_MODULE_7__["default"], {
     icon: currentIcon
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__["createElement"])("div", {
@@ -501,6 +494,20 @@ __webpack_require__.r(__webpack_exports__);
 
 Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('create-block/jb-alert-block', {
   apiVersion: 2,
+  attributes: {
+    title: {
+      type: 'string'
+    },
+    headingTag: {
+      type: 'string'
+    },
+    alertType: {
+      type: 'string'
+    },
+    icon: {
+      type: 'string'
+    }
+  },
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_3__["default"],
   supports: {
@@ -638,7 +645,17 @@ var Inspector = function Inspector(_ref) {
     onClick: function onClick() {
       return setHeadingTag('strong');
     }
-  }, "Strong")))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
+  }, "Strong"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    isPrimary: headingTag === 'p',
+    onClick: function onClick() {
+      return setHeadingTag('p');
+    }
+  }, "p"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    isPrimary: headingTag === 'i',
+    onClick: function onClick() {
+      return setHeadingTag('i');
+    }
+  }, "i")))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelBody"], {
     title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Alert Type')
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["PanelRow"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["ToggleControl"], {
     label: "Invert Colors",
@@ -705,7 +722,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function save() {
-  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save(), Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Jb Alert Block – hello from the saved content!', 'jb-alert-block'));
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save());
 }
 
 /***/ }),

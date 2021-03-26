@@ -10,45 +10,80 @@
 	flex-wrap      : wrap;
 
 	button {
-		width       : calc(50% - 1rem);
-		margin      : 0 0.5rem 0.5rem 0;
-		margin-left : 0 !important;
-		border      : 1px solid #888;
-		box-shadow  : none !important;
+		width         : calc(50% - 1rem);
+		margin        : 0 0.5rem 0.5rem 0;
+		margin-left   : 0 !important;
+		border        : none;
+		transition    : none;
+		box-shadow: 0 0 0 1px #eeeeee !important;
+		filter: grayscale(70%);
 
-		&.btn-active {
-			border     : 1px solid orange;
-			box-shadow : 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+		span:before {
+			opacity : 0.1;
+			color: #000;
+
+			&:hover,
+			&:focus,
+			&:active {
+				fill : #000;
+			}
 		}
 
-		&:hover,
-		&:focus {
-			box-shadow : 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+		&.btn-active {
+			filter: grayscale(0);
+			box-shadow: 0 0 0 1px #000000 !important;
+
+
+			span:before {
+				opacity : 1;
+			}
+		}
+
+		&.alert-dark {
+			box-shadow: 0 0 0 1px #555555 !important;
+			border: none !important;
+			filter: brightness(1.4) grayscale(70%);
+
+			span:before {
+				color: #888888;
+			}
+
+			&.btn-active {
+				filter: brightness(1.6) grayscale(0);
+
+				span:before {
+					color: #fff;
+				}
+			}
 		}
 	}
 }
 
 .wp-block-create-block-jb-alert-block {
-	padding : 0;
+	padding       : 0;
+	border-radius : 0.4rem;
 
 	.jb-block {
 		display        : flex !important;
 		align-items    : center;
 		flex-direction : row;
 		padding        : 0.4rem;
+		border-radius  : 0.4rem;
 
-		h2, h3, h4, h5, h6, strong {
-			font-size: 1.4rem;
-			line-height: 1.4rem;
-			margin-top: 0;
-			margin-bottom: 0;
+		h2, h3, h4, h5, h6 {
+			font-family    : inherit;
+			letter-spacing : 1px;
+			font-size      : 1.4rem;
+			line-height    : 1.4rem;
+			margin-top     : 0.2rem;
+			margin-bottom  : 0.2rem;
 		}
 
 		.jb-alert-icon {
-			padding-left: 0.8rem;
-			padding-right: 1.2rem;
-			height: 32px;
-			fill: currentColor;
+			padding-left  : 0.8rem;
+			padding-right : 1.2rem;
+			height        : 32px;
+			fill          : currentColor;
 		}
 
 		a {
@@ -62,6 +97,7 @@
 		p {
 			margin-top    : 0;
 			margin-bottom : 0;
+			font-size     : 16px;
 		}
 	}
 }
@@ -87,8 +123,8 @@
 		}
 
 		&.btn-active {
-			color      : orange;
-			border     : 1px solid orange;
+			color      : $color--alert-active;
+			border     : 1px solid $color--alert-active;
 			box-shadow : 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
 		}
 	}

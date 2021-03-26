@@ -8,7 +8,6 @@ import AlertIcon                      from './icons';
 
 export default function Edit () {
 
-	const [ textAlignment, setTextAlignment ] = useState( [] );
 	const [ hasTitle, setHasTitle ] = useState( true );
 	const [ title, setTitle ] = useState( '' );
 	const [ headingTag, setHeadingTag ] = useState( 'strong' );
@@ -32,22 +31,20 @@ export default function Edit () {
 		<div {...useBlockProps()}>
 			<div className={setJBAlertClassList()}>
 				<Inspector
-					title={title}
-					setTitle={setTitle}
+					//title={title}
+					//setTitle={setTitle}
 					hasTitle={hasTitle}
 					setHasTitle={setHasTitle}
-					headingTag={headingTag}
-					setHeadingTag={setHeadingTag}
-					textAlignment={textAlignment}
-					setTextAlignment={setTextAlignment}
-					alertType={alertType}
-					setAlertType={setAlertType}
+					//headingTag={headingTag}
+					//setHeadingTag={setHeadingTag}
+					//alertType={alertType}
+					//setAlertType={setAlertType}
 					invertColors={invertColors}
 					setInvertColors={setInvertColors}
 					hasIcon={hasIcon}
 					setHasIcon={setHasIcon}
-					currentIcon={currentIcon}
-					setCurrentIcon={setCurrentIcon}
+					//currentIcon={currentIcon}
+					//setCurrentIcon={setCurrentIcon}
 				/>
 				<AlertIcon icon={currentIcon}/>
 				<div className="jb-block-inner-content">

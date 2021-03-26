@@ -9,26 +9,47 @@
     width: calc(50% - 1rem);
     margin: 0 0.5rem 0.5rem 0;
     margin-left: 0 !important;
-    border: 1px solid #888;
-    box-shadow: none !important; }
+    border: none;
+    transition: none;
+    box-shadow: 0 0 0 1px #eeeeee !important;
+    filter: grayscale(70%); }
+    .alert-types button span:before {
+      opacity: 0.1;
+      color: #000; }
+      .alert-types button span:before:hover, .alert-types button span:before:focus, .alert-types button span:before:active {
+        fill: #000; }
     .alert-types button.btn-active {
-      border: 1px solid orange;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important; }
-    .alert-types button:hover, .alert-types button:focus {
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important; }
+      filter: grayscale(0);
+      box-shadow: 0 0 0 1px #000000 !important; }
+      .alert-types button.btn-active span:before {
+        opacity: 1; }
+    .alert-types button.alert-dark {
+      box-shadow: 0 0 0 1px #555555 !important;
+      border: none !important;
+      filter: brightness(1.4) grayscale(70%); }
+      .alert-types button.alert-dark span:before {
+        color: #888888; }
+      .alert-types button.alert-dark.btn-active {
+        filter: brightness(1.6) grayscale(0); }
+        .alert-types button.alert-dark.btn-active span:before {
+          color: #fff; }
 
 .wp-block-create-block-jb-alert-block {
-  padding: 0; }
+  padding: 0;
+  border-radius: 0.4rem; }
   .wp-block-create-block-jb-alert-block .jb-block {
     display: flex !important;
     align-items: center;
     flex-direction: row;
-    padding: 0.4rem; }
-    .wp-block-create-block-jb-alert-block .jb-block h2, .wp-block-create-block-jb-alert-block .jb-block h3, .wp-block-create-block-jb-alert-block .jb-block h4, .wp-block-create-block-jb-alert-block .jb-block h5, .wp-block-create-block-jb-alert-block .jb-block h6, .wp-block-create-block-jb-alert-block .jb-block strong {
+    padding: 0.4rem;
+    border-radius: 0.4rem; }
+    .wp-block-create-block-jb-alert-block .jb-block h2, .wp-block-create-block-jb-alert-block .jb-block h3, .wp-block-create-block-jb-alert-block .jb-block h4, .wp-block-create-block-jb-alert-block .jb-block h5, .wp-block-create-block-jb-alert-block .jb-block h6 {
+      font-family: inherit;
+      letter-spacing: 1px;
       font-size: 1.4rem;
       line-height: 1.4rem;
-      margin-top: 0;
-      margin-bottom: 0; }
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem; }
     .wp-block-create-block-jb-alert-block .jb-block .jb-alert-icon {
       padding-left: 0.8rem;
       padding-right: 1.2rem;
@@ -40,7 +61,8 @@
         color: #fff; }
     .wp-block-create-block-jb-alert-block .jb-block p {
       margin-top: 0;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-size: 16px; }
 
 .alert-icon-select {
   display: flex;
@@ -59,8 +81,8 @@
       height: 1.4rem;
       width: 100%; }
     .alert-icon-select .btn-alert-icon.btn-active {
-      color: orange;
-      border: 1px solid orange;
+      color: #007cba;
+      border: 1px solid #007cba;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important; }
 
 .alert-default {
