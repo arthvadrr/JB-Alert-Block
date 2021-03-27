@@ -158,9 +158,9 @@ const Inspector = (
 							      return (
 								      <Button
 									      className={setAlertIconButtonClassList( icon )}
-									      onClick={() => setAttributes( { icon : icon } )}
+									      onClick={() => setAttributes( { currentIcon : icon } )}
 								      >
-									      <AlertIcon icon={icon}></AlertIcon>
+									      <AlertIcon currentIcon={icon}></AlertIcon>
 								      </Button>
 							      );
 						      } )}

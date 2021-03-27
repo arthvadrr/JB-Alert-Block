@@ -8,7 +8,7 @@ registerBlockType( 'create-block/jb-alert-block', {
 	attributes: {
 		title: {
 			type: 'string',
-			default: 'Unset',
+			default: '',
 		},
 		hasTitle: {
 			type: 'bool',
