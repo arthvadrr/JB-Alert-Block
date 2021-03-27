@@ -2,12 +2,10 @@ import { __ }                from '@wordpress/i18n';
 import { InspectorControls } from '@wordpress/block-editor';
 
 import {
-	BaseControl,
 	Button,
 	ButtonGroup,
 	PanelBody,
 	PanelRow,
-	SelectControl,
 	ToggleControl,
 	TextControl,
 }                from '@wordpress/components';
@@ -16,20 +14,25 @@ import AlertIcon from './icons';
 const Inspector = (
 	{
 		title,
-		setTitle,
 		hasTitle,
-		setHasTitle,
 		headingTag,
-		setHeadingTag,
 		alertType,
-		setAlertType,
-		invertColors,
-		setInvertColors,
-		hasIcon,
-		setHasIcon,
 		currentIcon,
-		setCurrentIcon,
+		hasIcon,
+		invertColors,
+		setAttributes,
 	} ) => {
+
+	console.log(`
+	${title}
+	${hasTitle}
+	${headingTag}
+	${alertType}
+	${currentIcon}
+	${hasIcon}
+	${invertColors}
+	${setAttributes}
+	`);
 
 	      const alertTypes = [
 		      'default',
@@ -84,7 +87,7 @@ const Inspector = (
 						      label="Title"
 						      help={hasTitle ? 'Title enabled' : 'Title disabled'}
 						      checked={hasTitle}
-						      onChange={() => setHasTitle( !hasTitle )}
+						      onChange={() => setAttributes( { hasTitle : !hasTitle } )}
 					      />
 				      </PanelRow>
 
@@ -95,18 +98,18 @@ const Inspector = (
 							      label="Title"
 							      value={title}
 							      placeholder="Enter an alert title..."
-							      onChange={( title ) => setTitle( title )}
+							      onChange={( title ) => setAttributes( { title : title } )}
 						      />
 					      </PanelRow>
 					      <ButtonGroup>
-						      <Button isPrimary={headingTag === 'h2'} onClick={() => setHeadingTag( 'h2' )}>H2</Button>
-						      <Button isPrimary={headingTag === 'h3'} onClick={() => setHeadingTag( 'h3' )}>H3</Button>
-						      <Button isPrimary={headingTag === 'h4'} onClick={() => setHeadingTag( 'h4' )}>H4</Button>
-						      <Button isPrimary={headingTag === 'h5'} onClick={() => setHeadingTag( 'h5' )}>H5</Button>
-						      <Button isPrimary={headingTag === 'h6'} onClick={() => setHeadingTag( 'h6' )}>H6</Button>
-						      <Button isPrimary={headingTag === 'strong'} onClick={() => setHeadingTag( 'strong' )}>Strong</Button>
-						      <Button isPrimary={headingTag === 'p'} onClick={() => setHeadingTag( 'p' )}>p</Button>
-						      <Button isPrimary={headingTag === 'i'} onClick={() => setHeadingTag( 'i' )}>i</Button>
+						      <Button isPrimary={headingTag === 'h2'} onClick={() => setAttributes( { headingTag : 'h2' } )}>H2</Button>
+						      <Button isPrimary={headingTag === 'h3'} onClick={() => setAttributes( { headingTag : 'h3' } )}>H3</Button>
+						      <Button isPrimary={headingTag === 'h4'} onClick={() => setAttributes( { headingTag : 'h4' } )}>H4</Button>
+						      <Button isPrimary={headingTag === 'h5'} onClick={() => setAttributes( { headingTag : 'h5' } )}>H5</Button>
+						      <Button isPrimary={headingTag === 'h6'} onClick={() => setAttributes( { headingTag : 'h6' } )}>H6</Button>
+						      <Button isPrimary={headingTag === 'strong'} onClick={() => setAttributes( { headingTag : 'strong' } )}>Strong</Button>
+						      <Button isPrimary={headingTag === 'p'} onClick={() => setAttributes( { headingTag : 'p' } )}>p</Button>
+						      <Button isPrimary={headingTag === 'i'} onClick={() => setAttributes( { headingTag : 'i' } )}>i</Button>
 					      </ButtonGroup>
 				      </>
 				      }
@@ -117,7 +120,7 @@ const Inspector = (
 						      label="Invert Colors"
 						      help={invertColors ? 'Inverted' : 'Normal'}
 						      checked={invertColors}
-						      onChange={() => setInvertColors( !invertColors )}
+						      onChange={() => setAttributes( { invertColors : !invertColors } )}
 					      />
 				      </PanelRow>
 				      <PanelRow>
@@ -128,7 +131,7 @@ const Inspector = (
 									      key={i}
 									      icon="warning"
 									      className={setAlertButtonClassList( alert )}
-									      onClick={() => setAlertType( alert )}
+									      onClick={() => setAttributes( { alertType : alert } )}
 								      >
 									      {alert.charAt( 0 ).toUpperCase() + alert.slice( 1 )}
 								      </Button>
@@ -144,7 +147,7 @@ const Inspector = (
 						      label="Use Icon"
 						      help={hasIcon ? 'Icon enabled' : 'Icon disabled'}
 						      checked={hasIcon}
-						      onChange={() => setHasIcon( !hasIcon )}
+						      onChange={() => setAttributes( { hasIcon : !hasIcon } )}
 					      />
 				      </PanelRow>
 
@@ -155,7 +158,7 @@ const Inspector = (
 							      return (
 								      <Button
 									      className={setAlertIconButtonClassList( icon )}
-									      onClick={() => setCurrentIcon( icon )}
+									      onClick={() => setAttributes( { icon : icon } )}
 								      >
 									      <AlertIcon icon={icon}></AlertIcon>
 								      </Button>

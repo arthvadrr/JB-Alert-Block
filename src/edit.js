@@ -2,19 +2,20 @@ import { __ }                         from '@wordpress/i18n';
 import Inspector                      from './inspector';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import INNER_BLOCKS_TEMPLATE          from './inner_blocks_template';
-import { useState }                   from '@wordpress/element';
 import './editor.scss';
 import AlertIcon                      from './icons';
 
-export default function Edit () {
+export default function Edit (  {attributes, setAttributes}  ) {
 
-	const [ hasTitle, setHasTitle ] = useState( true );
-	const [ title, setTitle ] = useState( '' );
-	const [ headingTag, setHeadingTag ] = useState( 'strong' );
-	const [ alertType, setAlertType ] = useState( 'default' );
-	const [ invertColors, setInvertColors ] = useState( false );
-	const [ hasIcon, setHasIcon ] = useState( true );
-	const [ currentIcon, setCurrentIcon ] = useState( 'bullhorn' );
+	const {
+		      title,
+		      hasTitle,
+		      headingTag,
+		      alertType,
+		      currentIcon,
+		      hasIcon,
+		      invertColors,
+	      } = attributes;
 
 	const setJBAlertClassList = () => {
 		let classArr = [ 'jb-block', `alert-${alertType}` ];
@@ -31,22 +32,17 @@ export default function Edit () {
 		<div {...useBlockProps()}>
 			<div className={setJBAlertClassList()}>
 				<Inspector
-					//title={title}
-					//setTitle={setTitle}
+					title={title}
 					hasTitle={hasTitle}
-					setHasTitle={setHasTitle}
-					//headingTag={headingTag}
-					//setHeadingTag={setHeadingTag}
-					//alertType={alertType}
-					//setAlertType={setAlertType}
-					invertColors={invertColors}
-					setInvertColors={setInvertColors}
+					headingTag={headingTag}
+					alertType={alertType}
 					hasIcon={hasIcon}
-					setHasIcon={setHasIcon}
-					//currentIcon={currentIcon}
-					//setCurrentIcon={setCurrentIcon}
+					invertColors={invertColors}
+					setAttributes={setAttributes}
 				/>
-				<AlertIcon icon={currentIcon}/>
+				{hasIcon &&
+					<AlertIcon currentIcon={currentIcon}/>
+				}
 				<div className="jb-block-inner-content">
 					{hasTitle &&
 					<HeadingTag>{title === '' ? 'Enter an alert title...' : title}</HeadingTag>

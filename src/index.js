@@ -7,16 +7,32 @@ registerBlockType( 'create-block/jb-alert-block', {
 	apiVersion : 2,
 	attributes: {
 		title: {
-			type: 'string'
+			type: 'string',
+			default: 'Unset',
+		},
+		hasTitle: {
+			type: 'bool',
+			default: false,
 		},
 		headingTag: {
-			type: 'string'
+			type: 'string',
+			default: 'strong',
 		},
 		alertType: {
-			type: 'string'
+			type: 'string',
+			default: 'default',
 		},
-		icon: {
-			type: 'string'
+		currentIcon: {
+			type: 'string',
+			default: 'bullhorn',
+		},
+		hasIcon: {
+			type: 'bool',
+			default: false,
+		},
+		invertColors: {
+			type: 'bool',
+			default: false,
 		}
 	},
 	edit       : Edit,
